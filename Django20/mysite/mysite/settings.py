@@ -32,6 +32,7 @@ SECRET_KEY = getenv("DJANGO_SECRET_KEY", 'django-insecure-hvxn%qq=gyw^4*o2lo1#bw
 DEBUG = getenv("DJANGO_DEBUG", "0") == "1"
 
 ALLOWED_HOSTS = [
+    '213.226.125.88',
     "127.0.0.1",
     "0.0.0.0",
 ] + getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
@@ -43,6 +44,7 @@ INTERNAL_IPS = [
 
 if DEBUG:
     import socket
+
     hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
     INTERNAL_IPS.append("10.0.2.2")
     INTERNAL_IPS.extend(
