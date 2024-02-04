@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   app:
-    build: ./Dockerfile
+    build:
+      context: D:\\Python\\Django20\\Django20
+      dockerfile: D:\\Python\\Django20\\Django20\\Dockerfile
     command:
       - gunicorn
       - mysite.wsgi:application
